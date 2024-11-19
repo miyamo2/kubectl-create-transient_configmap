@@ -1,6 +1,8 @@
 {
-  "name": "kubectl-create-transient-configmap",
-  "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+  "build": {
+    "dockerfile": "Dockerfile",
+  },
+  "runArgs": ["--platform=linux/amd64"],
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
     "ghcr.io/devcontainers/features/go:1": {
@@ -9,6 +11,6 @@
     "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
       "kubectlVersion": "latest",
       "minikubeVersion": "latest"
-    }
+    },
   },
 }
