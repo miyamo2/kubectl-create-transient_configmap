@@ -32,7 +32,8 @@ import (
 func main() {
 	root := cmd.NewCmdTransientConfigMap(genericiooptions.IOStreams{In: os.Stdin, Out: os.Stdout, ErrOut: os.Stderr})
 	if err := cli.RunNoErrOutput(root); err != nil {
-		fmt.Print(err)
+		fmt.Printf("%s\n", err.Error())
+		os.Exit(1)
 	}
-	fmt.Printf("create transient_configmap completed.\n")
+	fmt.Printf("create transient_configmap completed\n")
 }

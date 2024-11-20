@@ -35,16 +35,16 @@ import (
 const version = "0.1.0-alpha"
 
 var (
-	// transientConfigMapUse is the one-line usage message for the create transient_configmap command
-	transientConfigMapUse = "create transient_configmap CONFIGMAP_NAME [--from-file=[key=]source] [--from-literal=key1=value1] [--from-env-file=[key=]source] --job-name=my-job [--from=cronjob/name]"
+	// transientConfigMapUse is the one-line usage message for the transient_configmap command
+	transientConfigMapUse = "kubectl create transient_configmap CONFIGMAP_NAME [--from-file=[key=]source] [--from-literal=key1=value1] [--from-env-file=[key=]source] --job-name=my-job [--from=cronjob/name]"
 
-	// transientConfigMapShort is the short description of the create transient_configmap command
-	transientConfigMapShort = "Create a job to be run only once with the specified name."
+	// transientConfigMapShort is the short description of the transient_configmap command
+	transientConfigMapShort = "Create a ConfigMap and a Job. And after the job is complete, delete them."
 
-	// transientConfigMapLong is the long description of the create transient_configmap command
-	transientConfigMapLong = `Create a job to be run only once with the specified name.`
+	// transientConfigMapLong is the long description of the transient_configmap command
+	transientConfigMapLong = `Create a ConfigMap and a Job. And after the job is complete, delete them.`
 
-	// transientConfigMapExample is the example of the create transient_configmap command
+	// transientConfigMapExample is the example of the transient_configmap command
 	transientConfigMapExample = `
 		# Create a new transient configmap named my-config based on folder bar
 		kubectl create transient_configmap my-config --from-file=path/to/bar --job-name=test-job --job-from=cronjob/a-cronjob
