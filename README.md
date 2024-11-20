@@ -1,5 +1,10 @@
 # kubectl-create-transient_configmap 
 
+[![CI](https://github.com/miyamo2/kubectl-create-transient_configmap/actions/workflows/ci.yaml/badge.svg)](https://github.com/miyamo2/kubectl-create-transient_configmap/actions/workflows/ci.yaml)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/miyamo2/kubectl-create-transient_configmap)](https://img.shields.io/github/v/release/miyamo2/kubectl-create-transient_configmap)
+[![Go Report Card](https://goreportcard.com/badge/github.com/miyamo2/kubectl-create-transient_configmap)](https://goreportcard.com/report/github.com/miyamo2/kubectl-create-transient_configmap)
+[![GitHub License](https://img.shields.io/github/license/miyamo2/kubectl-create-transient_configmap?&color=blue)](https://img.shields.io/github/license/miyamo2/kubectl-create-transient_configmap?&color=blue)
+
 kubectl plugin.  
 Create a ConfigMap and a Job. And after the job is complete, delete them.
 
