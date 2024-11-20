@@ -320,7 +320,7 @@ func executeKubectlCommand(ctx context.Context, args ...string) ([]byte, error) 
 		if errors.Is(err, context.Canceled) {
 			return nil, err
 		}
-		return nil, fmt.Errorf(strings.TrimSpace(strings.TrimPrefix(stderr.String(), "error:")))
+		return nil, errors.New(strings.TrimSpace(strings.TrimPrefix(stderr.String(), "error:")))
 	}
 	return stdout.Bytes(), nil
 }
