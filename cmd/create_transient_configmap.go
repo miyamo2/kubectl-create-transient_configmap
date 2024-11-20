@@ -32,7 +32,7 @@ import (
 	"strings"
 )
 
-const version = "0.1.0-alpha"
+const version = "0.1.0"
 
 var (
 	// transientConfigMapUse is the one-line usage message for the transient_configmap command

@@ -56,6 +56,19 @@ spec:
 kubectl create transient_configmap my-config --from-literal=num=1 --job-name=test-job --job-from=cronjob/a-cronjob
 ```
 
+## Features
+
+### Flags
+
+| name            | description                                                                                                                                                                                                                                                                                               |
+|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `from-env-file` | Specify the path to a file to read lines of key=val pairs to create a configmap.                                                                                                                                                                                                                          |
+| `from-file`     | Key file can be specified using its file path, in which case file basename will be used as configmap key, or optionally with a key and file path, in which case the given key will be used. Specifying a directory will iterate each named file in the directory whose basename is a valid configmap key. |
+| `from-literal`  | Specify a key and literal value to insert in configmap (i.e. mykey=somevalue)                                                                                                                                                                                                                             |
+| `job-name`      | Name of job to be created. required.                                                                                                                                                                                                                                                                      |
+| `job-from`      | The name of the resource to create a Job from (only cronjob is supported).                                                                                                                                                                                                                                |
+| `job-image`     | Image name to run.                                                                                                                                                                                                                                                                                        |
+
 ## Contributing
 
 Feel free to open a PR or an Issue.  
