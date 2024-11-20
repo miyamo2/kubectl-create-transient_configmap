@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: stub-cronjob
+spec:
+  timeZone: "Asia/Tokyo"
+  schedule: "0 0 * * *"
+  startingDeadlineSeconds: 100
+  jobTemplate:
+    spec:
+      completions: 1
+      parallelism: 1
+      backoffLimit: 0
+      template:
+        spec:
+          containers:
+            - name: stub-cronjob
+              image: e2e:latest
+              imagePullPolicy: Never
+              env:
+                - name: NUM
+                  valueFrom:
+                    configMapKeyRef:
+                      name: stub-configmap
+                      key: num
+                      optional: true
+          restartPolicy: Never
