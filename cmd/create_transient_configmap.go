@@ -179,7 +179,7 @@ var (
 // Run executes the command
 func (o *TransientConfigMapOptions) Run(cmd *cobra.Command) (err error) {
 	if o.version {
-		cmd.Printf("kubectl-create-transient-configmap %s\n", version)
+		cmd.Printf("kubectl-create-transient_configmap %s\n", version)
 		return
 	}
 	// Create the configmap
