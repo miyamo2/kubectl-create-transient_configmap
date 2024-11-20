@@ -42,11 +42,11 @@ jobs:
           golangci_lint_flags: "--config=.golangci.yaml"
 
       - name: Setup Minikube
-        uses: medyagh/setup-minikube@latest
+        uses: manusa/actions-setup-minikube@latest
         with:
           driver: "docker"
-          minikube-version: "v1.34.0"
-          kubernetes-version: "v1.31.1"
+          minikube version: "v1.34.0"
+          kubernetes version: "v1.31.1"
 
       - name: Install kubectl-create-transient_configmap 
         run: |
