@@ -15,7 +15,7 @@ Create a ConfigMap and a Job. And after the job is complete, delete them.
 #### With go install(recommend)
 
 ```sh
-go install github.com/miyamo2/kubectl-create-transient_configmap 
+go install github.com/miyamo2/kubectl-create-transient_configmap@latest
 ```
 
 ### Simple Usage
