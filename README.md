@@ -12,7 +12,13 @@ Create a ConfigMap and a Job. And after the job is complete, delete them.
 
 ### Install
 
-#### With go install(recommend)
+#### With homebrew
+
+```sh
+brew install miyamo2/tap/kubectl-create-transient_configmap
+```
+
+#### With go install
 
 ```sh
 go install github.com/miyamo2/kubectl-create-transient_configmap@latest
