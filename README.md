@@ -59,7 +59,7 @@ spec:
 
 **command**
 ```sh
-kubectl create transient_configmap my-config --from-literal=num=1 --job-name=test-job --job-from=cronjob/a-cronjob
+kubectl create transient_configmap foo-configmap --from-literal=num=1 --job-name=test-job --job-from=cronjob/foo-batch
 ```
 
 ## Features
