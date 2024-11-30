@@ -267,11 +267,11 @@ func (o *TransientConfigMapOptions) Run(cmd *cobra.Command) (err error) {
 	go func() {
 		waitJobCompleteArgs := append(waitJobArgs, jobName, "--for=condition=complete")
 		_, wErr := executeKubectlCommand(waitJobContext, waitJobCompleteArgs...)
-		if wErr != nil {
-			select {
-			case <-waitJobContext.Done():
-				return
-			default:
+		select {
+		case <-waitJobContext.Done():
+			return
+		default:
+			if wErr != nil {
 				if err == nil {
 					err = wErr
 				}
@@ -284,14 +284,12 @@ func (o *TransientConfigMapOptions) Run(cmd *cobra.Command) (err error) {
 	go func() {
 		waitJobFailedArgs := append(waitJobArgs, jobName, "--for=condition=failed")
 		_, wErr := executeKubectlCommand(waitJobContext, waitJobFailedArgs...)
-		if wErr != nil {
-			select {
-			case <-waitJobContext.Done():
-				return
-			default:
-				if err == nil {
-					err = wErr
-				}
+		select {
+		case <-waitJobContext.Done():
+			return
+		default:
+			if wErr != nil && err == nil {
+				err = wErr
 			}
 		}
 		complete <- false
